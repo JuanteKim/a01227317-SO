@@ -98,3 +98,12 @@ sys_shutdown(void)
 
 }
 
+int
+sys_reboot(void)
+{
+    outw(0x64, 0xFE);
+    return 0;
+
+
+}
+
