@@ -4,6 +4,6 @@
 
 int main(){
     int pid = fork();
-    if(pid == 0) printf("Soy proceso hijo ");
-    else printf("Soy proceso padre ");
+    if(pid == 0)execlp("ls", "ls", "-a", "/", (char*)NULL);
+    else printf("Soy el padre.");
 }
