@@ -47,7 +47,6 @@ int main(int argn, char **argv) {
   close(fd);
   close(tmp);
   unlink(fileName);
-  link(tmp, siper);
   unlink(tmp); 
   exit(0);
 }
