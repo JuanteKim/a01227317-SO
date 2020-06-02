@@ -1,4 +1,3 @@
-#include <bits/types/siginfo_t.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,9 +44,12 @@ int main(int argn, char **argv) {
   word[i] = '\0';
   writeToFile(tmp, word, searchWord, replaceWord);
   close(fd);
-  close(tmp);
+  //PARA RENOMBRAR
+  char pathToTmp[] = "/tmp/";
+  strcat(pathToTmp, fileName);
   unlink(fileName);
-  link(tmp, siper);
-  unlink(tmp); 
+  link(tmpFileName, pathToTmp);
+  unlink(tmpFileName);
+  close(tmp);
   exit(0);
 }
